@@ -10,28 +10,28 @@ function scss_css(done){
     .pipe( sourcemaps.init())
     .pipe( sass({
         errorLogToConsole: true, 
-        // outputStyle: "compressed"
+        outputStyle: "compressed"
     }))
     .on('error', console.error.bind(console))
     .pipe( autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    .pipe( rename({suffix:'.min'}))
+    .pipe(rename({suffix:'.min'}))
     .pipe(sourcemaps.write('./'))
-    .pipe( gulp.dest('./css/'))
+    .pipe(gulp.dest('./css/'))
     .pipe(browser_sync.stream());
     done();
 }
-function sync(done){
-    browser_sync.init({
-        server: {
-            baseDir: "./"
-        },
-        port: 3000
-    });
-    done();
-}
+// function sync(done){
+//     browser_sync.init({
+//         server: {
+//             baseDir: "./"
+//         },
+//         port: 3000
+//     });
+//     done();
+// }
 function reload(done){
     browser_sync.reload();
     done();
@@ -42,4 +42,4 @@ function watchFiles(){
     gulp.watch("./**/*.js", reload);
     gulp.watch("./**/*.php", reload);
 }
-gulp.task('default', gulp.parallel(watchFiles, sync));
+gulp.task('default', gulp.parallel(watchFiles));
