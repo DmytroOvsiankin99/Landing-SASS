@@ -1,0 +1,8 @@
+@mixin text-head {
+    font: {
+        family: 'montserrat-medium-webfont' ,Tahoma , Arial, sans-serif;
+        size: 30px;
+        weight: 500;
+    }
+    line-height: 1;
+}

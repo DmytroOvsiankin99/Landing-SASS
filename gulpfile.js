@@ -1,9 +1,9 @@
-const gulp = require('gulp');//npm install --save-dev gulp
-const rename = require('gulp-rename');//npm install --save-dev gulp-rename
+const gulp = require('gulp');
+const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const autoprefixer = require ('gulp-autoprefixer');
 const sourcemaps = require ('gulp-sourcemaps');
-const browser_sync = require ('browser-sync').create();//npm install --save-dev browser-sync
+const browser_sync = require ('browser-sync').create();
 
 function scss_css(done){
     gulp.src('./sass/**/*.scss')
