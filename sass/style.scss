@@ -16,7 +16,7 @@
 @mixin text-head {
     font: {
         family: 'montserrat-medium-webfont' ,Tahoma , Arial, sans-serif;
-        size: 32px;
+        size: 36px;
         weight: 500;
     }
     line-height: 1;
@@ -56,6 +56,7 @@ body{
 }
 #main-banner{
     min-height: 100vh;
+    background: #f8f9f9;
 }
 .banner-top{
     padding: 38px 0 175px;
@@ -85,6 +86,38 @@ body{
 }
 .navigation{
     position: relative;
+}
+.mobile-menu {
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: #000;
+    cursor: pointer;
+    margin-right: 10px;
+    display: none;
+    outline: none;
+    top:0;
+    right: 0;
+}
+.mobile-menu:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding-top: 5px;
+    border-bottom: 3px solid #000;
+    width: 40px;
+    height: 3px;
+}
+.mobile-menu:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    padding-bottom: 5px;
+    border-top: 3px solid #000;
+    width: 40px;
+    height: 3px;
 }
 .inner-nav li{
     padding-right: 30px;
@@ -154,39 +187,95 @@ body{
     transform: translate(-50%,-50%);
     background: url("../images/signature.png") no-repeat 50%;
 }
-.mobile-menu {
-    position: absolute;
-    width: 40px;
-    height: 3px;
-    background: #000;
-    cursor: pointer;
-    margin-right: 30px;
-    display: none;
-    outline: none;
-    top:0;
-    right: 0;
+#prof-skills{
+    background: #f8f9f9;
 }
-.mobile-menu:after {
+#prof-skills .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left_prof-skills{
+    min-width: 50%;
+    width: 50%;
+    padding: 162px 85px 144px 0;
+}
+.left_prof-skills h2{
+    @include text-head;
+    padding-bottom: 36px;
+}
+.left_prof-skills p{
+    @include text-description;
+    color: #000;
+    text-transform: uppercase;
+    padding: 36px 0 18px;
+    position: relative;
+}
+.left_prof-skills h2+p{
+    padding-top: 0;
+}
+.left_prof-skills p::before{
     content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
     position: absolute;
-    right: 0;
-    top: 100%;
-    padding-top: 5px;
-    border-bottom: 3px solid #000;
-    width: 40px;
-    height: 3px;
+    background: #d8d8d8;
+    bottom: 0;
+    left: 0;
 }
-.mobile-menu:before {
+.left_prof-skills p.first-item::after{
     content: "";
+    display: block;
+    width: 75%;
+    height: 4px;
     position: absolute;
-    right: 0;
-    bottom: 100%;
-    padding-bottom: 5px;
-    border-top: 3px solid #000;
-    width: 40px;
-    height: 3px;
+    background: #10c9c3;
+    bottom: 0;
+    left: 0;
 }
-@media(max-width:768px){
+.left_prof-skills p.second-item::after{
+    content: "";
+    display: block;
+    width: 90%;
+    height: 4px;
+    position: absolute;
+    background: #10c9c3;
+    bottom: 0;
+    left: 0;
+}
+.left_prof-skills p.third-item::after{
+    content: "";
+    display: block;
+    width: 65%;
+    height: 4px;
+    position: absolute;
+    background: #10c9c3;
+    bottom: 0;
+    left: 0;
+}
+#info{
+    background: #10c9c3;
+}
+#info .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#info .container div{
+    width: 25%;
+    min-width: 25%;
+    padding: 100px 0 100px 68px;
+}
+#info p{
+    @include text-description;
+    color: #fff;
+    text-transform: uppercase;
+}
+#info p:first-child{
+    padding-bottom: 10px;
+}
+@media(max-width: 768px){
     .mobile-menu{
         display: block;
     }
@@ -194,18 +283,33 @@ body{
         display: block;
         position: absolute;
         top: 100%;
-        width: 300px;
-        background: #000;
+        width: 200px;
         -webkit-transition: 0.3s;
         -o-transition: 0.3s;
         transition: 0.3s;
         right: -500px;
-        max-height: calc(100vh - 52px);
         overflow-y: auto;
-        height: 100vh;
+        height: auto;
+        background: #000;
+        opacity: .9;
+    }
+    .navigation > ul.active{
+        right: 10px;
+        top: 23px;
+        display: block;
+    }
+    .navigation > ul.active a{
+        color: #fff;
     }
     .banner-icon{
-        margin-left: 30px;
+        margin-left: 10px;
+    }
+    .inner-nav li{
+        text-align: center;
+        padding: 15px 0;
+    }
+    .inner-nav li:last-child{
+        padding: 15px 0;
     }
     .banner-top{
         padding: 30px 0 80px;
