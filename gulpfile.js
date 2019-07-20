@@ -23,15 +23,15 @@ function scss_css(done){
     .pipe(browser_sync.stream());
     done();
 }
-// function sync(done){
-//     browser_sync.init({
-//         server: {
-//             baseDir: "./"
-//         },
-//         port: 3000
-//     });
-//     done();
-// }
+function sync(done){
+    browser_sync.init({
+        server: {
+            baseDir: "./"
+        },
+        port: 3000
+    });
+    done();
+}
 function reload(done){
     browser_sync.reload();
     done();
@@ -42,4 +42,4 @@ function watchFiles(){
     gulp.watch("./**/*.js", reload);
     gulp.watch("./**/*.php", reload);
 }
-gulp.task('default', gulp.parallel(watchFiles));
+gulp.task('default', gulp.parallel(watchFiles, sync));
