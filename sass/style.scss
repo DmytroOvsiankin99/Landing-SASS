@@ -198,7 +198,7 @@ body{
 .left_prof-skills{
     min-width: 50%;
     width: 50%;
-    padding: 162px 85px 144px 0;
+    padding: 144px 85px 144px 0;
 }
 .left_prof-skills h2{
     @include text-head;
@@ -320,6 +320,24 @@ body{
     transform: translateY(-50%);
     background: url("../images/heart.svg") no-repeat 50%;
 }
+#work h2{
+    @include text-head;
+    text-align: center;
+    padding: 80px 0 40px;
+}
+#work .work-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+#work .work-img{
+    height: 300px;
+    width: 25%;
+    min-width: 25%;
+    background: #0f0;
+}
+
 @media(max-width: 768px){
     .mobile-menu{
         display: block;
