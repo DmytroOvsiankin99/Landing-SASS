@@ -515,6 +515,210 @@ body{
     transform: translateX(-50%);
     background: url("../images/paint.png") no-repeat 50%;
 }
+.clients-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 65px 0;
+    flex-wrap: wrap;
+}
+.clients{
+    width: 20%;
+    min-width: 20%;
+    position: relative;
+    height: 80px;
+}
+.clients-1::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../images/Clients-1.png") no-repeat 50%;
+}
+.clients-2::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../images/Clients-2.png") no-repeat 50%;
+}
+.clients-3::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../images/Clients-3.png") no-repeat 50%;
+}
+.clients-4::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../images/Clients-4.png") no-repeat 50%;
+}
+.clients-5::before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url("../images/Clients-5.png") no-repeat 50%;
+}
+#contacts .container{
+    max-width: 700px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#contacts h2{
+    @include text-head;
+    text-align: center;
+    padding-bottom: 34px;
+}
+#contacts{
+    background: #f5f5f5;
+}
+#contacts p{
+    @include text-description;
+    text-align: center;
+    padding-bottom: 34px;
+}
+input, textarea{
+    @include text-description;
+    line-height: 1;
+    border: none;
+    cursor: pointer;
+    padding: 18px 10px 20px 26px;
+    outline: none;
+    margin-bottom: 30px;
+}
+.name-email-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.name-email-wrap>input{
+    width: 48%;
+}
+form>input{
+    width: 100%;
+}
+textarea{
+    width: 100%;
+    min-height: 170px;
+    resize: vertical;
+}
+.submit-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type="submit"]{
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1;
+    width: 27%;
+    padding: 24px 0 22px;
+    background: #10c9c3;
+    text-align: center;
+    margin: 0;
+}
+.footer{
+    background: #141414;
+}
+.footer .container{
+    max-width: 1165px;
+    padding: 70px 15px;
+}
+.info-wrap{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.info-wrap > div{
+    width: 33.3%;
+    min-width: 33.3%;
+}
+.left-info>a{
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    padding-bottom: 12px;
+    display: block;
+}
+.left-info p,
+.left-info p a{
+    @include text-description;
+}
+.center-info{
+    padding-left: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.center-info a{
+    display: block;
+    @include text-description;
+    line-height: 1;
+}
+.center-info a{
+    padding-bottom: 12px;   
+}
+.right-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-info div{
+    width: 33.3%;
+    min-width: 33.3%;
+}
+.right-info a{
+    display: block;
+    @include text-description;
+    line-height: 1;
+    padding-bottom: 12px;
+}
+.right-info a:last-child{
+    padding: 0;
+}
+@media(max-width: 1000px){
+    .info-wrap{
+        flex-wrap: wrap;
+    }
+    .info-wrap > div{
+        width: 50%;
+        min-width: 50%;
+    }
+    .left-info{
+        padding-left: 30px;
+    }
+    .center-info{
+        padding-right: 30px;
+    }
+    .right-info{
+        margin-top: 20px;
+    }
+}
 @media(max-width: 768px){
     .mobile-menu{
         display: block;
@@ -645,6 +849,39 @@ body{
     .nth-5-6{
         margin-bottom: 30px;
     }
+    .clients{
+        width: 50%;
+        min-width: 50%;
+        margin-bottom: 30px;
+    }
+    .clients:last-child{
+        margin: 0;
+    }
+    .clients-wrap{
+        padding: 20px 0 40px;
+    }
+    #contacts .container{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    #contacts h2,
+    #contacts p{
+        padding-bottom: 28px;
+    }
+    input, textarea{
+        font-size: 16px;
+        padding: 14px 8px 16px 22px;
+        margin-bottom: 20px;
+    }
+    input[type="submit"]{
+        width: 70%;
+    }
+    .footer .container{
+        padding: 40px 15px;
+    }
+    .center-info a{
+        text-align: right;
+    }
 }
 @media(max-width: 520px){
     #work .work-img{
@@ -659,6 +896,49 @@ body{
     .nth-5-6,
     .mb-58{
         margin-bottom: 20px;
+    }
+    .clients{
+        width: 100%;
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+    #contacts h2{
+        padding-bottom: 20px;
+    }
+    #contacts p{
+        padding-bottom: 16px;
+    }
+    input, textarea{
+        font-size: 16px;
+        padding: 14px 8px 16px 22px;
+        margin-bottom: 20px;
+    }
+    input[type="submit"]{
+        width: 100%;
+    }
+    .name-email-wrap{
+        flex-wrap: wrap;
+    }
+    .name-email-wrap>input{
+        width: 100%;
+    }
+    .info-wrap > div{
+        width: 100%;
+        min-width: 100%;
+    }
+    .left-info{
+        padding: 0;
+    }
+    .center-info{
+        margin-top: 20px;
+        padding: 0;
+    }
+    .info-wrap a,
+    .info-wrap p{
+        text-align: center;
+    }
+    .center-info a:last-child{
+        padding: 0;
     }
 }
 @media(max-width: 480px){
